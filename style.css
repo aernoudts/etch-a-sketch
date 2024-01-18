@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    background-color: red;
+}
+
+.box {
+    border-color: black;
+    border-style: solid;
+}
