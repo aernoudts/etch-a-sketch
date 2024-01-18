@@ -7,18 +7,24 @@ body {
     overflow: scroll;
 }
 
-.container {
+.block {
     display: flex;
-    width: fit-content;
+    height: 500px;
+    width: 500px;
+}
+
+.container {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
     background-color: white;
 }
 
 .box {
+    flex: 1 1 auto;
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    height: 15px;
-    width: 15px;
 }
 
 .box:hover {
@@ -28,4 +34,6 @@ body {
 .prompt {
     display: flex;
     gap: 8px;
+    padding-top: 2%;
+    padding-bottom: 5%;
 }
