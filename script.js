@@ -1,14 +1,19 @@
 const body = document.querySelector("body");
+const block = document.createElement("block");
+body.appendChild(block);
+let gridsize = 0
 
-for (let i = 1; i <= 16; i++) {
-    const container = document.createElement("container")
-    container.setAttribute("class", "container");
-    body.appendChild(container);
-    for (let i = 1; i <= 16; i++) {
-        let box = document.createElement("box");
-        box.setAttribute("class", "box");
-        box.innerHTML = "box";
-        container.appendChild(box);
+function createGrid(gridsize) {
+    for (let i = 1; i <= gridsize; i++) {
+        const container = document.createElement("container")
+        container.setAttribute("class", "container");
+        block.appendChild(container);
+        for (let i = 1; i <= gridsize; i++) {
+            let box = document.createElement("box");
+            box.setAttribute("class", "box");
+            box.innerHTML = "";
+            container.appendChild(box);
+        }
+        container.appendChild(document.createElement("br"));
     }
-    container.appendChild(document.createElement("br"));
 }
