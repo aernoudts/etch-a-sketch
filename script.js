@@ -8,8 +8,13 @@ let gridsize = 0;
 
 send.addEventListener('click', function() {
     if (inputGridSize.value < 100) {
+        while (block.firstChild) {
+            block.removeChild(block.firstChild);
+            }
         var gridSize = inputGridSize.value;
         createGrid(gridSize);
+    } else {
+        inputGridSize.value = "Invalid input!";
     }
 });
 
