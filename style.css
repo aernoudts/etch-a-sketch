@@ -9,9 +9,35 @@ body {
 
 .prompt {
     display: flex;
-    gap: 8px;
+    width: 254px;
+    justify-content: space-between;
     padding-top: 4vh;
-    padding-bottom: 4vh;
+    padding-bottom: 2vh;
+}
+
+.send, .action {
+    width: 80px;
+}
+
+.send, .action, .inputgridsize {
+    border: solid 1px;
+    border-radius: 3px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    width: 254px;
+    padding-bottom: 2vh;
+}
+
+#startover {
+    color: red;
+}
+
+#startover:hover {
+    background-color: red;
+    color: white;
 }
 
 .block {
@@ -35,7 +61,7 @@ body {
     flex: 1 1 auto;
     border-color: black;
     border-style: solid;
-    border-width: 1px;
+    border-width:thin;
 }
 
 .box:hover {
