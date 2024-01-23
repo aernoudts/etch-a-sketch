@@ -4,18 +4,16 @@ const block = document.querySelector(".block");
 const inputGridSize = document.querySelector(".inputGridSize");
 const drawButton = document.querySelector("#draw")
 const eraseButton = document.querySelector("#erase")
-const startOver = document.querySelector(".startover")
+const startOver = document.querySelector("#startover")
 drawButton.style.background = "lightgray";
 body.appendChild(block);
 
-let gridsize = 0;
+let gridSize = 0;
 let color = "black"
 
 send.addEventListener('click', function() {
     if (inputGridSize.value <= 60) {
-        while (block.firstChild) {
-            block.removeChild(block.firstChild);
-            }
+        removeExistingGrid();
         var gridSize = inputGridSize.value;
         createGrid(gridSize);
     }else {
@@ -23,19 +21,20 @@ send.addEventListener('click', function() {
     }
 });
 
-drawButton.addEventListener('click', function() {
-    color = "black";
-    drawButton.style.background = "lightgray";
-    eraseButton.style.background = "";
+startOver.addEventListener('click', function() {
+    removeExistingGrid()
+    var gridSize = inputGridSize.value;
+    createGrid(gridSize);
+    draw();
+})
 
+drawButton.addEventListener('click', function() {
+    draw();
 });
 
 eraseButton.addEventListener('click', function() {
-    color = "white";
-    eraseButton.style.background = "lightgray";
-    drawButton.style.background = "";
+    erase();
 });
-
 
 function changeColor(box) {
     box.addEventListener('click', function() {
@@ -56,4 +55,22 @@ function createGrid(gridSize) {
             container.appendChild(box);
         }
     }
+}
+
+function removeExistingGrid(){
+    while (block.firstChild) {
+        block.removeChild(block.firstChild);
+    }
+}
+
+function draw() {
+    color = "black";
+    drawButton.style.background = "lightgray";
+    eraseButton.style.background = "";
+}
+
+function erase() {
+    color = "white";
+    eraseButton.style.background = "lightgray";
+    drawButton.style.background = "";
 }
